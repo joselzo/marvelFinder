@@ -28,11 +28,7 @@ namespace marvelFinder.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<SuperHeroViewModel.Result> lista = new List<SuperHeroViewModel.Result>();
-            SuperHeroViewModel.Result model = new SuperHeroViewModel.Result();
-            model.name = "NO HAY RESULTADOS";
-            lista.Add(model);
-            return View(lista);
+            return View();
         }
 
        
