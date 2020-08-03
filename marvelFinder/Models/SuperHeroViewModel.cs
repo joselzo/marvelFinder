@@ -8,28 +8,6 @@ namespace marvelFinder.Models
 {
     public class SuperHeroViewModel
     {
-        public class RootNum
-        {
-            [JsonPropertyName("response")]
-            public string response { get; set; }
-            [JsonPropertyName("id")]
-            public string id { get; set; }
-            [JsonPropertyName("name")]
-            public string name { get; set; }
-            [JsonPropertyName("powerstats")]
-            public Powerstats powerstats { get; set; }
-            [JsonPropertyName("biography")]
-            public Biography biography { get; set; }
-            [JsonPropertyName("appearance")]
-            public Appearance appearance { get; set; }
-            [JsonPropertyName("work")]
-            public Work work { get; set; }
-            [JsonPropertyName("connections")]
-            public Connections connections { get; set; }
-            [JsonPropertyName("image")]
-            public Image image { get; set; }
-        }
-
         public class Root
         {
             [JsonPropertyName("response")]
