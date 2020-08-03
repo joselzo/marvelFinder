@@ -12,8 +12,6 @@ namespace marvelFinder.Helper
         {
             return value.All(char.IsNumber);
         }
-
-
         public List<SuperHeroViewModel.Result> getNotResult()
         {
             List<SuperHeroViewModel.Result> lista = new List<SuperHeroViewModel.Result>();
@@ -22,7 +20,6 @@ namespace marvelFinder.Helper
             lista.Add(model);
             return (lista);
         }
-
         public List<SuperHeroViewModel.Result> getResultForNumber(SuperHeroViewModel.Root list)
         {
             List<SuperHeroViewModel.Result> lista = new List<SuperHeroViewModel.Result>();

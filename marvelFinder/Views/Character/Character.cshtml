@@ -2,7 +2,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 <link href="~/css/Card.css" rel="stylesheet" />
-<partial name="../home/_PartialBuscador" />
+<partial name="../Shared/_PartialBuscador" />
 
 <br />
 @foreach (var item in Model)
@@ -18,7 +18,7 @@
         <div class="profile-row">
 
             <div class="desc">
-                <h1>NO HAY RESULTADOS</h1>
+                <h1>@Html.DisplayFor(modelItem => item.name)</h1>
 
             </div>
         </div>
