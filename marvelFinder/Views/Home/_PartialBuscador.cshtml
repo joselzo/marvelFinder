@@ -6,7 +6,7 @@
         @Html.ActionLink("Buscador", "Buscador", Model, new { type = "button" })*@
 
 
-    @using (Html.BeginForm("Character", "Home", FormMethod.Get))
+    @using (Html.BeginForm("Character", "Character", FormMethod.Get))
     {
         @Html.TextBox("Param", null, new { @class = "form-control" })
         <br />
