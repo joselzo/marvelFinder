@@ -1,0 +1,107 @@
+﻿@model IEnumerable<marvelFinder.Models.SuperHeroViewModel.Result>
+
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<link href="~/css/Card.css" rel="stylesheet" />
+<br />
+@foreach (var item in Model)
+{
+
+
+    @if (item.name == "NO HAY RESULTADOS")
+    {
+
+
+        <div class="id-card-wrapper col-md-12">
+            <div class="id-card">
+                <div class="profile-row">
+
+                    <div class="desc">
+                        <h1>NO HAY RESULTADOS</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+       
+        <div class="id-card-wrapper col-md-12">
+            <div class="id-card">
+                <div class="profile-row">
+                    <div class="dp col-md-12">
+
+                        <img width="200" height="200" src="@Html.DisplayFor(modelItem => item.image.url)">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 desc">
+                            <h1 class="display-3">@Html.DisplayFor(modelItem => item.name)</h1>
+                        </div>
+
+                        <div class=" desc">
+
+                            <h2>Powerstats</h2>
+                            <p>intelligence: @Html.DisplayFor(modelItem => item.powerstats.intelligence)</p>
+                            <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
+                            <p>speed: @Html.DisplayFor(modelItem => item.powerstats.speed)</p>
+                            <p>durability: @Html.DisplayFor(modelItem => item.powerstats.durability)</p>
+                            <p>power: @Html.DisplayFor(modelItem => item.powerstats.power)</p>
+                            <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
+
+
+                        </div>
+                        <div class="desc">
+                            <br />
+                            <h2>Biography</h2>
+                            <p>full_name: @Html.DisplayFor(modelItem => item.biography.full_name)</p>
+                            <p>alter_egos: @Html.DisplayFor(modelItem => item.biography.alter_egos)</p>
+                            <p>aliases: @Html.DisplayFor(modelItem => item.biography.aliases)</p>
+                            <p>place_of_birth: @Html.DisplayFor(modelItem => item.biography.place_of_birth)</p>
+                            <p>first_appearance: @Html.DisplayFor(modelItem => item.biography.first_appearance)</p>
+                            <p>publisher: @Html.DisplayFor(modelItem => item.biography.publisher)</p>
+                            <p>alignment: @Html.DisplayFor(modelItem => item.biography.alignment)</p>
+
+
+                        </div>
+                        <div class=" desc">
+                            <br />
+                            <h2>Appearance</h2>
+                            <p>full_name: @Html.DisplayFor(modelItem => item.appearance.gender)</p>
+                            <p>alter_egos: @Html.DisplayFor(modelItem => item.appearance.race)</p>
+                            <p>aliases: @Html.DisplayFor(modelItem => item.appearance.height)</p>
+                            <p>place_of_birth: @Html.DisplayFor(modelItem => item.appearance.weight)</p>
+                            <p>first_appearance: @Html.DisplayFor(modelItem => item.appearance.eye_color)</p>
+                            <p>publisher: @Html.DisplayFor(modelItem => item.appearance.hair_color)</p>
+
+
+
+                        </div>
+                        <div class=" desc">
+                            <br />
+                            <h2>Work</h2>
+                            <p>full_name: @Html.DisplayFor(modelItem => item.work.occupation)</p>
+                            <p>alter_egos: @Html.DisplayFor(modelItem => item.work.basee)</p>
+                            <br />
+                            <h2>Connections</h2>
+                            <p>full_name: @Html.DisplayFor(modelItem => item.connections.group_affiliation)</p>
+                            <p>alter_egos: @Html.DisplayFor(modelItem => item.connections.relatives)</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+
+    <br />
+
+    <br />
+
+
+
+}
+

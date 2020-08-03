@@ -1,0 +1,19 @@
+﻿<div class="text-center">
+    <h1 class="display-4">Welcome to Heroes Data Base</h1>
+    <p>Search for the informations of Heroes and Enemies.</p>
+    @*@Html.TextBox(Model[0].name, new { @class = "form-control" })
+        <input type="submit" value="Model" />
+        @Html.ActionLink("Buscador", "Buscador", Model, new { type = "button" })*@
+
+
+    @using (Html.BeginForm("Character", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("Param", null, new { @class = "form-control" })
+        <br />
+
+        <input type="submit" value="BUSCAR" class="btn btn-success" />
+    }
+
+
+
+</div>
