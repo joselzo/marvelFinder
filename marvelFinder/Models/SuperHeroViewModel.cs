@@ -106,6 +106,7 @@ namespace marvelFinder.Models
 
         public class Connections
         {
+            [JsonProperty("group-affiliation")]
             public string group_affiliation { get; set; }
             public string relatives { get; set; }
         }
