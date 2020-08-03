@@ -16,52 +16,29 @@ namespace marvelFinder.Controllers
         Utilidades _Util = new Utilidades();
         public async Task<IActionResult> Character(BuscarViewModel buscar)
         {
-            buscar.Param = buscar.Param ??  "0";
-          
+            buscar.Param = buscar.Param ?? "0";
+
             SuperHeroViewModel.Root list = new SuperHeroViewModel.Root();
-            HttpClient clientNum = _api.FinderId(buscar.Param);
-            HttpClient clientName = _api.FinderName(buscar.Param);
+            HttpClient client = _api.Finder(buscar.Param);
+
             HttpResponseMessage res;
             var data = new List<SuperHeroViewModel>();
-            if (_Util.IsNumeric(buscar.Param))
+            res = await client.GetAsync("");
+            if (res.IsSuccessStatusCode)
             {
-                res = await clientNum.GetAsync("");
-                if (res.IsSuccessStatusCode)
-                {
-                    var result = res.Content.ReadAsStringAsync().Result;
-                    list = JsonConvert.DeserializeObject<SuperHeroViewModel.Root>(result);
-                }
-                if (list.response == "error")
-                {
-                    return View(_Util.getNotResult());
-                }
-                else
-                {
-                    return View(_Util.getResultForNumber(list));
-                }
-
+                var result = res.Content.ReadAsStringAsync().Result;
+                list = JsonConvert.DeserializeObject<SuperHeroViewModel.Root>(result);
             }
+            if (list.response == "error")
+                return View(_Util.getNotResult());
             else
             {
-                res = await clientName.GetAsync("");
-                if (res.IsSuccessStatusCode)
-                {
-                    var result = res.Content.ReadAsStringAsync().Result;
-                    list = JsonConvert.DeserializeObject<SuperHeroViewModel.Root>(result);
-                }
-                if (list.response == "error")
-                {
-                    return View(_Util.getNotResult());
-                }
+                if (_Util.IsNumeric(buscar.Param))
+                    return View(_Util.getResultForNumber(list));
                 else
-                {
                     return View(list.results);
-                }
             }
-
-
-
         }
-        
+
     }
 }

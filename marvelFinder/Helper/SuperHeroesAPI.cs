@@ -8,17 +8,22 @@ namespace marvelFinder.Helper
 {
     public class SuperHeroesAPI
     {
-        public HttpClient FinderName(string Param)
+        Utilidades _Util = new Utilidades();
+       
+        public HttpClient Finder(string Param)
         {
             var client = new HttpClient();
-            client.BaseAddress = new Uri("https://www.superheroapi.com/api.php/3208655845889385/search/"+ Param);
+            if (_Util.IsNumeric(Param))
+            {
+                client.BaseAddress = new Uri(" https://superheroapi.com/api/3208655845889385/" + Param);
+            }
+            else
+            {
+                client.BaseAddress = new Uri("https://www.superheroapi.com/api.php/3208655845889385/search/" + Param);
+            }
+           
             return client;
         }
-        public HttpClient FinderId(string Param)
-        {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri(" https://superheroapi.com/api/3208655845889385/"+Param);
-            return client;
-        }
+
     }
 }

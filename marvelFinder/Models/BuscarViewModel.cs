@@ -7,9 +7,6 @@ namespace marvelFinder.Models
 {
     public class BuscarViewModel
     {
-      
             public string Param { get; set; }
-         
-        
     }
 }
