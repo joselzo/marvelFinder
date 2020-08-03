@@ -16,7 +16,7 @@ namespace marvelFinder.Helper
         {
             List<SuperHeroViewModel.Result> lista = new List<SuperHeroViewModel.Result>();
             SuperHeroViewModel.Result model = new SuperHeroViewModel.Result();
-            model.name = "NO HAY RESULTADOS";
+            model.name = "NO RESULTS";
             lista.Add(model);
             return (lista);
         }

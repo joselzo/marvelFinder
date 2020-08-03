@@ -40,7 +40,7 @@ namespace marvelFinder.Controllers
                         list = JsonConvert.DeserializeObject<SuperHeroViewModel.Root>(result);
                     }
                     if (list.response == "error")
-                        return View(_Util.getNotResult());
+                        data = (_Util.getNotResult());
                     else
                     {
                         if (_Util.IsNumeric(Param))
@@ -53,10 +53,10 @@ namespace marvelFinder.Controllers
                 _cache.Set(PalabraBUscada, data, cacheConf);
             }
             return View(data);
-           
+
         }
 
-      
+
 
 
     }
