@@ -5,11 +5,10 @@
 <partial name="../Shared/_PartialBuscador" />
 
 <br />
+<br />
 @foreach (var item in Model)
 {
-
-<br />
-@if (item.name == "NO RESULTS")
+@if (item.appearance.race == "MESSAGE")
     {
 
 
