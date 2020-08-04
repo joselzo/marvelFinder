@@ -13,17 +13,26 @@ namespace marvelFinder.Helper
        
         public HttpClient Finder(string Param)
         {
-            var client = new HttpClient();
-            if (_Util.IsNumeric(Param))
+            try
             {
-                client.BaseAddress = new Uri(" https://superheroapi.com/api/3208655845889385/" + Param);
+                var client = new HttpClient();
+                if (_Util.IsNumeric(Param))
+                {
+                    client.BaseAddress = new Uri(" https://superheroapi.com/api/3208655845889385/" + Param);
+                }
+                else
+                {
+                    client.BaseAddress = new Uri("https://www.superheroapi.com/api.php/3208655845889385/search/" + Param);
+                }
+
+                return client;
             }
-            else
+            catch (Exception)
             {
-                client.BaseAddress = new Uri("https://www.superheroapi.com/api.php/3208655845889385/search/" + Param);
+
+                throw;
             }
            
-            return client;
         }
 
     }

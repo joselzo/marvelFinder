@@ -3,7 +3,16 @@
 <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 <link href="~/css/Card.css" rel="stylesheet" />
 <partial name="../Shared/_PartialBuscador" />
+<style>
 
+    /* Optional styling */
+summary::-webkit-details-marker {
+  color: blue;
+}
+summary:focus {
+  outline-style: none;
+}
+</style>
 <br />
 <br />
 @foreach (var item in Model)
@@ -38,57 +47,60 @@
                 <div class="col-md-12 desc">
                     <h3 class="display-4">@Html.DisplayFor(modelItem => item.name)</h3>
                 </div>
+                <details>
+                    <summary class=" desc">Show The Information</summary>
+                    <div class=" desc">
 
-                <div class=" desc">
-
-                    <h2>Powerstats</h2>
-                    <p>intelligence: @Html.DisplayFor(modelItem => item.powerstats.intelligence)</p>
-                    <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
-                    <p>speed: @Html.DisplayFor(modelItem => item.powerstats.speed)</p>
-                    <p>durability: @Html.DisplayFor(modelItem => item.powerstats.durability)</p>
-                    <p>power: @Html.DisplayFor(modelItem => item.powerstats.power)</p>
-                    <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
-
-
-                </div>
-                <div class="desc">
-                    <br />
-                    <h2>Biography</h2>
-                    <p>full_name: @Html.DisplayFor(modelItem => item.biography.full_name)</p>
-                    <p>alter_egos: @Html.DisplayFor(modelItem => item.biography.alter_egos)</p>
-                    <p>aliases: @Html.DisplayFor(modelItem => item.biography.aliases)</p>
-                    <p>place_of_birth: @Html.DisplayFor(modelItem => item.biography.place_of_birth)</p>
-                    <p>first_appearance: @Html.DisplayFor(modelItem => item.biography.first_appearance)</p>
-                    <p>publisher: @Html.DisplayFor(modelItem => item.biography.publisher)</p>
-                    <p>alignment: @Html.DisplayFor(modelItem => item.biography.alignment)</p>
+                        <h2>Powerstats</h2>
+                        <p>intelligence: @Html.DisplayFor(modelItem => item.powerstats.intelligence)</p>
+                        <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
+                        <p>speed: @Html.DisplayFor(modelItem => item.powerstats.speed)</p>
+                        <p>durability: @Html.DisplayFor(modelItem => item.powerstats.durability)</p>
+                        <p>power: @Html.DisplayFor(modelItem => item.powerstats.power)</p>
+                        <p>combat: @Html.DisplayFor(modelItem => item.powerstats.combat)</p>
 
 
-                </div>
-                <div class=" desc">
-                    <br />
-                    <h2>Appearance</h2>
-                    <p>full_name: @Html.DisplayFor(modelItem => item.appearance.gender)</p>
-                    <p>alter_egos: @Html.DisplayFor(modelItem => item.appearance.race)</p>
-                    <p>aliases: @Html.DisplayFor(modelItem => item.appearance.height)</p>
-                    <p>place_of_birth: @Html.DisplayFor(modelItem => item.appearance.weight)</p>
-                    <p>first_appearance: @Html.DisplayFor(modelItem => item.appearance.eye_color)</p>
-                    <p>publisher: @Html.DisplayFor(modelItem => item.appearance.hair_color)</p>
+                    </div>
+                    <div class="desc">
+                        <br />
+                        <h2>Biography</h2>
+                        <p>full_name: @Html.DisplayFor(modelItem => item.biography.full_name)</p>
+                        <p>alter_egos: @Html.DisplayFor(modelItem => item.biography.alter_egos)</p>
+                        <p>aliases: @Html.DisplayFor(modelItem => item.biography.aliases)</p>
+                        <p>place_of_birth: @Html.DisplayFor(modelItem => item.biography.place_of_birth)</p>
+                        <p>first_appearance: @Html.DisplayFor(modelItem => item.biography.first_appearance)</p>
+                        <p>publisher: @Html.DisplayFor(modelItem => item.biography.publisher)</p>
+                        <p>alignment: @Html.DisplayFor(modelItem => item.biography.alignment)</p>
+
+
+                    </div>
+                    <div class=" desc">
+                        <br />
+                        <h2>Appearance</h2>
+                        <p>full_name: @Html.DisplayFor(modelItem => item.appearance.gender)</p>
+                        <p>alter_egos: @Html.DisplayFor(modelItem => item.appearance.race)</p>
+                        <p>aliases: @Html.DisplayFor(modelItem => item.appearance.height)</p>
+                        <p>place_of_birth: @Html.DisplayFor(modelItem => item.appearance.weight)</p>
+                        <p>first_appearance: @Html.DisplayFor(modelItem => item.appearance.eye_color)</p>
+                        <p>publisher: @Html.DisplayFor(modelItem => item.appearance.hair_color)</p>
 
 
 
-                </div>
-                <div class=" desc">
-                    <br />
-                    <h2>Work</h2>
-                    <p>full_name: @Html.DisplayFor(modelItem => item.work.occupation)</p>
-                    <p>alter_egos: @Html.DisplayFor(modelItem => item.work.basee)</p>
-                    <br />
-                    <h2>Connections</h2>
-                    <p>full_name: @Html.DisplayFor(modelItem => item.connections.group_affiliation)</p>
-                    <p>alter_egos: @Html.DisplayFor(modelItem => item.connections.relatives)</p>
+                    </div>
+                    <div class=" desc">
+                        <br />
+                        <h2>Work</h2>
+                        <p>full_name: @Html.DisplayFor(modelItem => item.work.occupation)</p>
+                        <p>alter_egos: @Html.DisplayFor(modelItem => item.work.basee)</p>
+                        <br />
+                        <h2>Connections</h2>
+                        <p>full_name: @Html.DisplayFor(modelItem => item.connections.group_affiliation)</p>
+                        <p>alter_egos: @Html.DisplayFor(modelItem => item.connections.relatives)</p>
 
 
-                </div>
+                    </div>
+                </details>
+              
             </div>
         </div>
     </div>
