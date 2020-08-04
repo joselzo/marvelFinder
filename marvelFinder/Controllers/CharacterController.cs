@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace marvelFinder.Controllers
 {
-    public class CharacterController : Controller
+    public class CharacterController : Controller 
     {
         SuperHeroesAPI _api = new SuperHeroesAPI();
         Utilidades _Util = new Utilidades();

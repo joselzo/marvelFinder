@@ -1,4 +1,5 @@
-﻿using System;
+﻿using marvelFinder.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace marvelFinder.Helper
 {
-    public class SuperHeroesAPI
+    public class SuperHeroesAPI : ISuperHeroesAPI
     {
         Utilidades _Util = new Utilidades();
        

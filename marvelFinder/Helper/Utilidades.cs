@@ -1,4 +1,5 @@
-﻿using marvelFinder.Models;
+﻿using marvelFinder.Interfaces;
+using marvelFinder.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace marvelFinder.Helper
 {
-    public class Utilidades
+    public class Utilidades : IUtilidades
     {
         public bool IsNumeric(string value)
         {
@@ -27,7 +28,7 @@ namespace marvelFinder.Helper
                 lista.Add(model);
                 return (lista);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
